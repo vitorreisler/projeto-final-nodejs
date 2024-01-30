@@ -1,0 +1,161 @@
+@local = http://localhost:3000
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2OTdkYjJhMWYwNzBlMTZjODk4Y2QiLCJpc0J1c2luZXNzIjpmYWxzZSwiaXNBZG1pbiI6ZmFsc2UsImlhdCI6MTcwNTQzNjgxNn0.HKLdPPUrge7NG9KLZ1vwDcPzZylCwRdrzUqB_hs0X0g
+@tokenBusiness=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE2ZTIzYjUzNjI3MWQxMWZjNTg0MWEiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA1NDM2NzM0fQ.s11oA8WfSmZ2C1H_ifwfWCvk4eErK2BvoUD01PAnMq8
+@adminToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE4NGIwNjI3NjQxMTljN2FkNjc2NjUiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3MDU2Nzk1NzZ9.Gr5Vniwhss_xsF5eI_JkNW8VWIWm9YLiYAsh1PPsWoY
+
+
+//USERS REQUEST
+//feito
+GET {{local}}/api/users/65a84b062764119c7ad67665
+x-auth-token: {{token}}
+
+###
+//feito
+GET {{local}}/api/users
+x-auth-token: {{adminToken}}
+
+###
+
+//feito
+POST {{local}}/api/users/
+Content-Type: application/json
+
+{
+    "first":"teste",
+    "middle":"gor",
+    "last": "rs",
+    "isBusiness":true,
+    "email":"vitorte@gmail.com",
+    "password": "Aa123456",
+    "phone":12345678911,
+    "url": "https://images.pexels.com/photos/17203619/pexels-photo-17203619/free-photo-of-hawking-em-uma-ponte.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "alt": "",
+    "country":"teste", 
+    "state":"teste", 
+    "city":"teste", 
+    "street":"teste",
+    "houseNumber":222
+}
+###
+POST {{local}}/api/users/login
+Content-Type: application/json
+
+    {
+        "email":"vitorte@gmail.com",
+        "password": "Aa123456"
+    }
+
+
+###
+
+PUT {{local}}/api/users/65ae60cdc35fe5cb8db9d0b0
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlNjBjZGMzNWZlNWNiOGRiOWQwYjAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA1OTI3NzY3fQ.hXyCalB4d-ZYVxhQgOqe_QvVv4VRO8AsNUd264zGQwo
+Content-Type: application/json
+
+{
+    "first":"Vitor",
+    "middle":"",
+    "last": "reisler",
+    "isBusiness":true,
+    "password":"Bb123456",
+    "email":"teste5@gmail.com",
+    "phone":12345678888,
+    "country":"Brasil", 
+    "state":"Sp", 
+    "city":"Sp", 
+    "street":"bbbbbb",
+    "houseNumber":111
+    }
+###
+
+//FEITO
+PATCH  {{local}}/api/users/65ae60cdc35fe5cb8db9d0b0
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlNjBjZGMzNWZlNWNiOGRiOWQwYjAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA1OTI3NzY3fQ.hXyCalB4d-ZYVxhQgOqe_QvVv4VRO8AsNUd264zGQwo
+###
+//feito
+DELETE  {{local}}/api/users/65ae60cdc35fe5cb8db9d0b0
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFlNjBjZGMzNWZlNWNiOGRiOWQwYjAiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA1OTI3NzY3fQ.hXyCalB4d-ZYVxhQgOqe_QvVv4VRO8AsNUd264zGQwo
+
+###
+
+//CARDS REQUEST
+
+//feito
+GET {{local}}/static/pageNotFound.html
+###
+
+GET {{local}}/api/cards/65aaa88f3e9dba08e129b34e
+
+###
+GET {{local}}/api/cards/my-cards
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWFhYTE3MmNjYzQ3M2JkOGYyZTNiMjUiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA1NjgxNjI1fQ.UfoLYgqWiiq7RZ3Oul4G1uAIfkuX422Fr71bguWK7j8
+###
+
+//feito
+GET {{local}}/api/cards/
+###
+
+//feito
+POST {{local}}/api/cards/
+Content-Type: application/json
+x-auth-token: {{tokenBusiness}}
+
+{
+    "title":"aaa",
+    "subtitle":"bbbbbbbb",
+    "description":"cccccccc",
+    "email":"teste2@gmail.com",
+    "phone":12345678911,
+    "country":"teste",
+    "url":"https://i.pinimg.com/originals/03/14/bc/0314bc37c7308c1c0953e13d7cd661cb.jpg",
+    "alt": "Sasuke Uchiha",
+    "state":"teste", 
+    "city":"teste", 
+    "street":"teste",
+    "houseNumber":222,
+    "zip":222
+    
+}
+###
+
+
+//feito
+PUT {{local}}/api/cards/65ae6aa6b8abc7d04e3d38f5
+Content-Type: application/json
+x-auth-token:{{tokenBusiness}}
+
+{
+    "title":"Um card1",
+    "subtitle":"isso ai",
+    "description":"grhrbn",
+    "email":"vitor@gmail.com",
+    "phone":12345678911,
+    "country":"teste",
+    "alt": "sasuke uchiha",
+    "state":"teste", 
+    "city":"teste", 
+    "street":"teste",
+    "houseNumber":222,
+    "zip":222
+}
+###
+
+
+PATCH {{local}}/api/cards/65ae6aa6b8abc7d04e3d38f5
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWE5NDI5MzA5ZWEzZjRjMzk5M2ZjYjEiLCJpc0J1c2luZXNzIjp0cnVlLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzA1NTkxNDU0fQ.9blwZuRwkAYJVBrNVauoBmtPGJa9H8iWotCjfsymc_0
+###
+
+//feito
+DELETE {{local}}/api/cards/65ae6aa6b8abc7d04e3d38f5
+x-auth-token: {{tokenBusiness}}
+###
+
+
+
+
+
+
+
+###
+  //"email":"vitorAdmin@gmail.com",
+  //  "password": "Admin123456",
